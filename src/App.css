@@ -40,3 +40,39 @@
 .read-the-docs {
   color: #888;
 }
+
+.pdf-container {
+  position: relative;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+button, input {
+  color: white;
+  background-color: #4A90E2;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover, input:hover {
+  background-color: #357ABD;
+}
+
+input[type="number"] {
+  width: 60px;
+}
+
