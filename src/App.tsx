@@ -1,19 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Modal from "./modal";
 import PdfViewer from "./PdfViewer";
-import { Document, Page } from "react-pdf";
-import { motion } from "framer-motion";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "./App.css"; // Import CSS
 import { Button } from "./components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+
 import {
   Card,
   CardContent,
@@ -23,47 +16,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 const App: React.FC = () => {
-  const [numPages, setNumPages] = useState<number>();
-  const [pageNumber, setPageNumber] = useState<number>(1);
-  const [showControls, setShowControls] = useState<boolean>(true);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  let timeoutId: NodeJS.Timeout;
-
-  function handleNextPage(): void {
-    if (pageNumber < numPages) {
-      setPageNumber(pageNumber + 1);
-    }
-  }
-
-  function handlePrevPage(): void {
-    if (pageNumber > 1) {
-      setPageNumber(pageNumber - 1);
-    }
-  }
-
-  function handleJumpToPage(event: React.ChangeEvent<HTMLInputElement>): void {
-    const newPageNumber = parseInt(event.target.value, 10);
-    if (newPageNumber >= 1 && newPageNumber <= numPages) {
-      setPageNumber(newPageNumber);
-    }
-  }
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   // Hide controls after a period of inactivity
-  const handleMouseMove = () => {
-    clearTimeout(timeoutId);
-    setShowControls(true);
-
-    timeoutId = setTimeout(() => {
-      setShowControls(false);
-    }, 3000); // Hide controls after 3 seconds of inactivity
-  };
-
-  useEffect(() => {
-    return () => clearTimeout(timeoutId);
-  }, []);
 
   return (
     <div>
@@ -138,7 +96,7 @@ const App: React.FC = () => {
               >
                 Open
               </Button>
-              <Modal isOpen={isModalOpen} onClose={closeModal} size="custom-sm">
+              <Modal isOpen={isModalOpen} onClose={closeModal} size="custom-xl">
                 <PdfViewer
                   file="/KEHATI Sistem Informasi Keanekaragaman Hayati PLTA Wonogiri Tahun 2023.pdf"
                   className="w-[610px] h-[810px] overflow-auto" // Tailwind classes for size
@@ -199,48 +157,6 @@ const App: React.FC = () => {
             </CardFooter>
           </Card>
         </div>
-        {/* <div className="colums-3">
-          <Card>
-            <CardHeader>
-              <CardTitle>Card Title</CardTitle>
-              <CardDescription>Card Description</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="columns-auto mt-20">
-                <Document
-                  file="/KEHATI Sistem Informasi Keanekaragaman Hayati PLTA Wonogiri Tahun 2023.pdf"
-                  onLoadSuccess={onDocumentLoadSuccess}
-                  loading="Loading PDF…"
-                >
-                  <Page pageNumber={pageNumber} />
-                </Document>
-              </div>
-            </CardContent>
-            <CardFooter>
-              <p>Card Footer</p>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Card Title</CardTitle>
-              <CardDescription>Card Description</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="columns-auto mt-20">
-                <Document
-                  file="/KEHATI Sistem Informasi Keanekaragaman Hayati PLTA Wonogiri Tahun 2023.pdf"
-                  onLoadSuccess={onDocumentLoadSuccess}
-                  loading="Loading PDF…"
-                >
-                  <Page pageNumber={pageNumber} />
-                </Document>
-              </div>
-            </CardContent>
-            <CardFooter>
-              <p>Card Footer</p>
-            </CardFooter>
-          </Card>
-        </div> */}
       </body>
       {/* <div onMouseMove={handleMouseMove} className="pdf-container">
        
@@ -253,30 +169,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-//  {showControls && (
-//         <motion.div
-//           className="controls"
-//           initial={{ opacity: 1 }}
-//           animate={{ opacity: 1 }}
-//           exit={{ opacity: 0 }}
-//         >
-//           <TooltipProvider>
-//             <Tooltip>
-//               <Button variant="outline" onClick={handlePrevPage}>
-//                 Back
-//               </Button>
-//               <TooltipContent>
-//                 <p>Previouse Page</p>
-//               </TooltipContent>
-//             </Tooltip>
-//           </TooltipProvider>
-//           <Button onClick={handleNextPage}>Next</Button>
-//           <input
-//             type="number"
-//             value={pageNumber}
-//             onChange={handleJumpToPage}
-//             min={1}
-//             max={numPages}
-//           />
-//         </motion.div>
-// )}
