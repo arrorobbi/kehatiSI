@@ -280,12 +280,6 @@ const App: React.FC = () => {
           </Card>
         </div>
       </body>
-      {/* <div onMouseMove={handleMouseMove} className="pdf-container">
-       
-        <p>
-          Page {pageNumber} of {numPages}
-        </p>
-      </div> */}
     </div>
   );
 };

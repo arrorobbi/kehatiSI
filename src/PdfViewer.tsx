@@ -10,6 +10,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import { Button } from "./components/ui/button";
@@ -54,12 +55,19 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ file, className = "" }) => {
     return () => clearTimeout(timeoutId);
   }, []);
 
+  const CustomLoader = () => (
+    <div className="flex items-center justify-center">
+      <div className="spinner">Loading...</div>
+      <Skeleton className="w-[100px] h-[20px] rounded-full" />
+    </div>
+  );
+
   return (
     <div className={className}>
       <Document
         file={file}
         onLoadSuccess={onDocumentLoadSuccess}
-        loading="Loading PDF…"
+        loading={CustomLoader}
       >
         <Page pageNumber={pageNumber} />
       </Document>
