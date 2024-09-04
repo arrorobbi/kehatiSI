@@ -8,7 +8,9 @@ import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import { Button } from "./components/ui/button";
 
@@ -69,40 +71,41 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ file, className = "" }) => {
           // initial={{ opacity: 1 }}
           initial={false}
           animate={{ stdDeviation: isHovered ? 0 : 2 }}
-          // animate={{
-          //   x: 0,
-          //   backgroundColor: "#000",
-          //   boxShadow: "10px 10px 0 rgba(0, 0, 0, 0.2)",
-          //   position: "-webkit-sticky",
-          //   transitionEnd: {
-          //     display: "none",
-          //   },
-          // }}
           exit={{ opacity: 0 }}
         >
           <TooltipProvider>
             <Tooltip>
-              <Button
-                variant="outline"
-                onClick={handlePrevPage}
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
-              >
-                Back
-              </Button>
+              <TooltipTrigger asChild>
+                <Button
+                  onClick={handlePrevPage}
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
+                >
+                  Back
+                </Button>
+              </TooltipTrigger>
               <TooltipContent>
-                <p>Previouse Page</p>
+                <p>Kembali Pada Halaman Sebelumnya</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
-          <Button
-            onClick={handleNextPage}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-          >
-            Next
-          </Button>
-          <input
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  onClick={handleNextPage}
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
+                >
+                  Next
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Melanjutkan Pada Halaman Berikutnya</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <Input
             type="number"
             value={pageNumber}
             onChange={handleJumpToPage}

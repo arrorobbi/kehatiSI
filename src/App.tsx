@@ -16,10 +16,30 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 const App: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isModalOpen1, setIsModalOpen1] = useState<boolean>(false);
+  const [isModalOpen2, setIsModalOpen2] = useState<boolean>(false);
+  const [isModalOpen3, setIsModalOpen3] = useState<boolean>(false);
+  const [isModalOpen4, setIsModalOpen4] = useState<boolean>(false);
+  const [isModalOpen5, setIsModalOpen5] = useState<boolean>(false);
+  const [isModalOpen6, setIsModalOpen6] = useState<boolean>(false);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal1 = () => setIsModalOpen1(true);
+  const closeModal1 = () => setIsModalOpen1(false);
+
+  const openModal2 = () => setIsModalOpen2(true);
+  const closeModal2 = () => setIsModalOpen2(false);
+
+  const openModal3 = () => setIsModalOpen3(true);
+  const closeModal3 = () => setIsModalOpen3(false);
+
+  const openModal4 = () => setIsModalOpen4(true);
+  const closeModal4 = () => setIsModalOpen4(false);
+
+  const openModal5 = () => setIsModalOpen5(true);
+  const closeModal5 = () => setIsModalOpen5(false);
+
+  const openModal6 = () => setIsModalOpen6(true);
+  const closeModal6 = () => setIsModalOpen6(false);
 
   // Hide controls after a period of inactivity
 
@@ -83,20 +103,84 @@ const App: React.FC = () => {
         <div className="grid grid-cols-3 gap-4">
           <Card>
             <CardHeader>
-              <CardTitle>LAPORAN 2020</CardTitle>
-              <CardDescription>Card Description</CardDescription>
+              <CardTitle>Publikasi Keanekaragaman Hayati</CardTitle>
+              <CardDescription>PLTA Wonogiri</CardDescription>
             </CardHeader>
             <CardContent>
-              <img className="h-auto w-auto" src="/2020.png" />
+              <img className="h-auto w-auto" src="/publikasi.png" />
             </CardContent>
             <CardFooter>
               <Button
-                onClick={openModal}
+                onClick={openModal1}
                 className="px-4 py-2 bg-blue-500 text-white rounded-lg"
               >
                 Open
               </Button>
-              <Modal isOpen={isModalOpen} onClose={closeModal} size="custom-xl">
+              <Modal
+                isOpen={isModalOpen1}
+                onClose={closeModal1}
+                size="custom-xl"
+              >
+                <PdfViewer
+                  file="/KEHATI ISBN Kehati PLTA Wonogiri.pdf"
+                  className="w-[420px] h-[600px] overflow-auto" // Tailwind classes for size
+                />
+              </Modal>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                Laporan Pemantauan Keanekaragaman Hayati Tahun 2024
+              </CardTitle>
+              <CardDescription>PLTA Wonogiri</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <img className="h-auto w-auto" src="/logo pln.png" />
+            </CardContent>
+            <CardFooter>
+              <Button
+                onClick={openModal2}
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+              >
+                Open
+              </Button>
+              <Modal
+                isOpen={isModalOpen2}
+                onClose={closeModal2}
+                size="custom-xl"
+              >
+                <PdfViewer
+                  file=""
+                  className="w-[420px] h-[600px] overflow-auto" // Tailwind classes for size
+                />
+              </Modal>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                Laporan Pemantauan Keanekaragaman Hayati Tahun 2023
+              </CardTitle>
+              <CardDescription>PLTA Wonogiri</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <img className="h-auto w-auto" src="/2023.png" />
+            </CardContent>
+            <CardFooter>
+              <Button
+                onClick={openModal3}
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+              >
+                Open
+              </Button>
+              <Modal
+                isOpen={isModalOpen3}
+                onClose={closeModal3}
+                size="custom-xl"
+              >
                 <PdfViewer
                   file="/KEHATI Sistem Informasi Keanekaragaman Hayati PLTA Wonogiri Tahun 2023.pdf"
                   className="w-[610px] h-[810px] overflow-auto" // Tailwind classes for size
@@ -107,53 +191,91 @@ const App: React.FC = () => {
 
           <Card>
             <CardHeader>
-              <CardTitle>LAPORAN 2022</CardTitle>
-              <CardDescription>Card Description</CardDescription>
+              <CardTitle>
+                Laporan Pemantauan Keanekaragaman Hayati Tahun 2022
+              </CardTitle>
+              <CardDescription>PLTA Wonogiri</CardDescription>
             </CardHeader>
             <CardContent>
               <img className="h-auto w-auto" src="/2022.png" />
             </CardContent>
             <CardFooter>
-              <p>Card Footer</p>
+              <Button
+                onClick={openModal4}
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+              >
+                Open
+              </Button>
+              <Modal
+                isOpen={isModalOpen4}
+                onClose={closeModal4}
+                size="custom-xl"
+              >
+                <PdfViewer
+                  file="/KEHATI Sistem Informasi Keanekaragaman Hayati PLTA Wonogiri Tahun 2022.pdf"
+                  className="w-[610px] h-[810px] overflow-auto" // Tailwind classes for size
+                />
+              </Modal>
             </CardFooter>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>LAPORAN 2023</CardTitle>
-              <CardDescription>Card Description</CardDescription>
+              <CardTitle>
+                Laporan Pemantauan Keanekaragaman Hayati Tahun 2021
+              </CardTitle>
+              <CardDescription>PLTA Wonogiri</CardDescription>
             </CardHeader>
             <CardContent>
-              <img className="h-auto w-auto" src="/2023.png" />
+              <img className="h-auto w-auto" src="/logo pln.png" />
             </CardContent>
             <CardFooter>
-              <p>Card Footer</p>
+              <Button
+                onClick={openModal5}
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+              >
+                Open
+              </Button>
+              <Modal
+                isOpen={isModalOpen5}
+                onClose={closeModal5}
+                size="custom-xl"
+              >
+                <PdfViewer
+                  file=""
+                  className="w-[610px] h-[810px] overflow-auto" // Tailwind classes for size
+                />
+              </Modal>
             </CardFooter>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>LAPORAN 2023</CardTitle>
-              <CardDescription>Card Description</CardDescription>
+              <CardTitle>
+                Laporan Pemantauan Keanekaragaman Hayati Tahun 2020
+              </CardTitle>
+              <CardDescription>PLTA Wonogiri</CardDescription>
             </CardHeader>
             <CardContent>
-              <img className="h-auto w-auto" src="/2023.png" />
+              <img className="h-auto w-auto" src="/2020.png" />
             </CardContent>
             <CardFooter>
-              <p>Card Footer</p>
-            </CardFooter>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>LAPORAN 2023</CardTitle>
-              <CardDescription>Card Description</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <img className="h-auto w-auto" src="/2023.png" />
-            </CardContent>
-            <CardFooter>
-              <p>Card Footer</p>
+              <Button
+                onClick={openModal6}
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+              >
+                Open
+              </Button>
+              <Modal
+                isOpen={isModalOpen6}
+                onClose={closeModal6}
+                size="custom-xl"
+              >
+                <PdfViewer
+                  file="/KEHATI Sistem Informasi Keanekaragaman Hayati PLTA Wonogiri Tahun 2020.pdf"
+                  className="w-[610px] h-[810px] overflow-auto" // Tailwind classes for size
+                />
+              </Modal>
             </CardFooter>
           </Card>
         </div>
