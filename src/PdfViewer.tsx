@@ -56,9 +56,11 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ file, className = "" }) => {
   }, []);
 
   const CustomLoader = () => (
-    <div className="flex items-center justify-center">
-      <div className="spinner">Loading...</div>
-      <Skeleton className="w-[100px] h-[20px] rounded-full bg-[#035b71]" />
+    <div className="flex items-center justify-center h-screen">
+      <div className="text-center">
+        <div className="spinner mb-4">Loading...</div>
+        <Skeleton className="w-[100px] h-[20px] rounded-full bg-[#035b71]" />
+      </div>
     </div>
   );
 
