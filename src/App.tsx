@@ -49,39 +49,11 @@ const App: React.FC = () => {
   return (
     <div>
       <header className="w-full text-white shadow-md fixed top-0 left-0 z-10 p-4 bg-[#FFFFFF]">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
           {/* Logo */}
-          <div className="colums-md">
-            <img src="/logo pln.png" className="w-40 h-auto" />
+          <div className="columns-md">
+            <img src="/logo pln.png" className="w-40 h-auto" alt="PLN Logo" />
           </div>
-
-          {/* Navigation Links */}
-          {/* <nav className="space-x-8 hidden md:flex">
-            <a href="#home" className="text-gray-600 hover:text-blue-600">
-              Home
-            </a>
-            <a href="#about" className="text-gray-600 hover:text-blue-600">
-              About
-            </a>
-            <a href="#services" className="text-gray-600 hover:text-blue-600">
-              Services
-            </a>
-            <a href="#contact" className="text-gray-600 hover:text-blue-600">
-              Contact
-            </a>
-          </nav> */}
-
-          {/* Button */}
-          {/* <div className="hidden md:block">
-            <a
-              href="#login"
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-            >
-              Login
-            </a>
-          </div> */}
-
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button className="text-gray-600 focus:outline-none">
               <svg
@@ -100,8 +72,23 @@ const App: React.FC = () => {
               </svg>
             </button>
           </div>
+          {/* Copyright Information */}
+          <div className="text-right text-xs mt-2 md:mt-0 text-black hover:text-blue-500 ml-1">
+            <p>Document &copy; {new Date().getFullYear()} PLTA WONOGIRI</p>
+            <p>
+              Website &copy; {new Date().getFullYear()}
+              <a
+                href="https://portofolio-ten-pink.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Robbi Arro
+              </a>
+            </p>
+          </div>
         </div>
       </header>
+
       <body className="mt-20">
         <div className="grid grid-cols-3 gap-4">
           <Card>
