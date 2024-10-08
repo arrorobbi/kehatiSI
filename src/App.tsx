@@ -106,7 +106,9 @@ const App: React.FC = () => {
         <div className="grid grid-cols-3 gap-4">
           <Card>
             <CardHeader>
-              <CardTitle>Status dan Kecenderungan Sumber Daya Kehati</CardTitle>
+              <CardTitle>
+                Status dan Kecenderungan Sumber Daya Keanekaragaman Hayati
+              </CardTitle>
               <CardDescription>PLTA Wonogiri</CardDescription>
             </CardHeader>
             <CardContent>
@@ -115,7 +117,7 @@ const App: React.FC = () => {
             <CardFooter>
               <Button
                 onClick={openModal5}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+                className="px-4 py-2 bg-[#00aff0] text-white rounded-lg"
               >
                 Open
               </Button>
@@ -134,7 +136,7 @@ const App: React.FC = () => {
 
           <Card>
             <CardHeader>
-              <CardTitle>Publikasi Keanekaragaman Hayati</CardTitle>
+              <CardTitle>Buku ISBN Keanekaragaman Hayati</CardTitle>
               <CardDescription>PLTA Wonogiri</CardDescription>
             </CardHeader>
             <CardContent>
@@ -143,7 +145,7 @@ const App: React.FC = () => {
             <CardFooter>
               <Button
                 onClick={openModal1}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+                className="px-4 py-2 bg-[#00aff0] text-white rounded-lg"
               >
                 Open
               </Button>
@@ -163,8 +165,8 @@ const App: React.FC = () => {
           <Card>
             <CardHeader>
               <CardTitle>
-                Laporan Pemantauan Keanekaragaman Hayati Spesies Langka Tahun
-                2024
+                Laporan Pemantauan Keanekaragaman Hayati Spesies Langka &
+                Dilindungi Tahun 2024
               </CardTitle>
               <CardDescription>PLTA Wonogiri</CardDescription>
             </CardHeader>
@@ -174,7 +176,7 @@ const App: React.FC = () => {
             <CardFooter>
               <Button
                 onClick={openModal3}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+                className="px-4 py-2 bg-[#00aff0] text-white rounded-lg"
               >
                 Open
               </Button>
@@ -204,7 +206,7 @@ const App: React.FC = () => {
             <CardFooter>
               <Button
                 onClick={openModal2}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+                className="px-4 py-2 bg-[#00aff0] text-white rounded-lg"
               >
                 Open
               </Button>
@@ -234,7 +236,7 @@ const App: React.FC = () => {
             <CardFooter>
               <Button
                 onClick={openModal7}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+                className="px-4 py-2 bg-[#00aff0] text-white rounded-lg"
               >
                 Open
               </Button>
@@ -264,7 +266,7 @@ const App: React.FC = () => {
             <CardFooter>
               <Button
                 onClick={openModal4}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+                className="px-4 py-2 bg-[#00aff0] text-white rounded-lg"
               >
                 Open
               </Button>
@@ -294,7 +296,7 @@ const App: React.FC = () => {
             <CardFooter>
               <Button
                 onClick={openModal6}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+                className="px-4 py-2 bg-[#00aff0] text-white rounded-lg"
               >
                 Open
               </Button>
@@ -312,6 +314,21 @@ const App: React.FC = () => {
           </Card>
         </div>
       </body>
+      <footer className="bg-gray-800 bg-opacity-50 text-white py-2 mt-6">
+        <div className="container mx-auto text-center text-xs">
+          <p>
+            &copy; {new Date().getFullYear()}
+            <a
+              href="https://portofolio-ten-pink.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-500 ml-1"
+            >
+              Robbi Arro
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
