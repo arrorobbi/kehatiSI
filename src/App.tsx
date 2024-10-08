@@ -53,7 +53,7 @@ const App: React.FC = () => {
           </div>
 
           {/* Navigation Links */}
-          <nav className="space-x-8 hidden md:flex">
+          {/* <nav className="space-x-8 hidden md:flex">
             <a href="#home" className="text-gray-600 hover:text-blue-600">
               Home
             </a>
@@ -66,7 +66,7 @@ const App: React.FC = () => {
             <a href="#contact" className="text-gray-600 hover:text-blue-600">
               Contact
             </a>
-          </nav>
+          </nav> */}
 
           {/* Button */}
           {/* <div className="hidden md:block">
@@ -122,8 +122,38 @@ const App: React.FC = () => {
                 size="custom-xl"
               >
                 <PdfViewer
-                  file="/KEHATI ISBN Kehati PLTA Wonogiri.pdf"
+                  file="/KHT-6.c.2 Buku ISBN Kehati.pdf"
                   className="w-[420px] h-[600px] overflow-auto" // Tailwind classes for size
+                />
+              </Modal>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                Status dan Kecenderungan Sumber Daya Kehati
+              </CardTitle>
+              <CardDescription>PLTA Wonogiri</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <img className="h-auto w-auto" src="/laporan.png" />
+            </CardContent>
+            <CardFooter>
+              <Button
+                onClick={openModal5}
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+              >
+                Open
+              </Button>
+              <Modal
+                isOpen={isModalOpen5}
+                onClose={closeModal5}
+                size="custom-xl"
+              >
+                <PdfViewer
+                  file="/KHT-5.c.2 Status dan Kecenderungan Sumber Daya Kehati.pdf"
+                  className="w-[850px] h-[700px] overflow-auto" // Tailwind classes for size
                 />
               </Modal>
             </CardFooter>
@@ -137,7 +167,7 @@ const App: React.FC = () => {
               <CardDescription>PLTA Wonogiri</CardDescription>
             </CardHeader>
             <CardContent>
-              <img className="h-auto w-auto" src="/logo pln.png" />
+              <img className="h-auto w-auto" src="/2024.png" />
             </CardContent>
             <CardFooter>
               <Button
@@ -152,8 +182,8 @@ const App: React.FC = () => {
                 size="custom-xl"
               >
                 <PdfViewer
-                  file=""
-                  className="w-[420px] h-[600px] overflow-auto" // Tailwind classes for size
+                  file="/Laporan Akhir Kehati Wonogiri 2024 signed.pdf"
+                  className="w-[612px] h-[700px] overflow-auto" // Tailwind classes for size
                 />
               </Modal>
             </CardFooter>
@@ -213,36 +243,6 @@ const App: React.FC = () => {
               >
                 <PdfViewer
                   file="/KEHATI Sistem Informasi Keanekaragaman Hayati PLTA Wonogiri Tahun 2022.pdf"
-                  className="w-[610px] h-[810px] overflow-auto" // Tailwind classes for size
-                />
-              </Modal>
-            </CardFooter>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>
-                Laporan Pemantauan Keanekaragaman Hayati Tahun 2021
-              </CardTitle>
-              <CardDescription>PLTA Wonogiri</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <img className="h-auto w-auto" src="/logo pln.png" />
-            </CardContent>
-            <CardFooter>
-              <Button
-                onClick={openModal5}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
-              >
-                Open
-              </Button>
-              <Modal
-                isOpen={isModalOpen5}
-                onClose={closeModal5}
-                size="custom-xl"
-              >
-                <PdfViewer
-                  file=""
                   className="w-[610px] h-[810px] overflow-auto" // Tailwind classes for size
                 />
               </Modal>
