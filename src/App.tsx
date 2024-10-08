@@ -314,10 +314,11 @@ const App: React.FC = () => {
           </Card>
         </div>
       </body>
-      <footer className="bg-gray-800 bg-opacity-50 text-white py-2 mt-6">
+      <footer className="bg-gray-800 bg-opacity-50 text-white py-2 mt-4">
         <div className="container mx-auto text-center text-xs">
+          <p>Document &copy; {new Date().getFullYear()} PLTA WONOGIRI</p>
           <p>
-            &copy; {new Date().getFullYear()}
+            Website &copy; {new Date().getFullYear()}
             <a
               href="https://portofolio-ten-pink.vercel.app/"
               target="_blank"
