@@ -22,6 +22,7 @@ const App: React.FC = () => {
   const [isModalOpen4, setIsModalOpen4] = useState<boolean>(false);
   const [isModalOpen5, setIsModalOpen5] = useState<boolean>(false);
   const [isModalOpen6, setIsModalOpen6] = useState<boolean>(false);
+  const [isModalOpen7, setIsModalOpen7] = useState<boolean>(false);
 
   const openModal1 = () => setIsModalOpen1(true);
   const closeModal1 = () => setIsModalOpen1(false);
@@ -41,6 +42,8 @@ const App: React.FC = () => {
   const openModal6 = () => setIsModalOpen6(true);
   const closeModal6 = () => setIsModalOpen6(false);
 
+  const openModal7 = () => setIsModalOpen7(true);
+  const closeModal7 = () => setIsModalOpen7(false);
   // Hide controls after a period of inactivity
 
   return (
@@ -103,6 +106,34 @@ const App: React.FC = () => {
         <div className="grid grid-cols-3 gap-4">
           <Card>
             <CardHeader>
+              <CardTitle>Status dan Kecenderungan Sumber Daya Kehati</CardTitle>
+              <CardDescription>PLTA Wonogiri</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <img className="h-auto w-auto" src="/laporan.png" />
+            </CardContent>
+            <CardFooter>
+              <Button
+                onClick={openModal5}
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+              >
+                Open
+              </Button>
+              <Modal
+                isOpen={isModalOpen5}
+                onClose={closeModal5}
+                size="custom-xl"
+              >
+                <PdfViewer
+                  file="/KHT-5.c.2 Status dan Kecenderungan Sumber Daya Kehati.pdf"
+                  className="w-[850px] h-[700px] overflow-auto" // Tailwind classes for size
+                />
+              </Modal>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader>
               <CardTitle>Publikasi Keanekaragaman Hayati</CardTitle>
               <CardDescription>PLTA Wonogiri</CardDescription>
             </CardHeader>
@@ -132,28 +163,29 @@ const App: React.FC = () => {
           <Card>
             <CardHeader>
               <CardTitle>
-                Status dan Kecenderungan Sumber Daya Kehati
+                Laporan Pemantauan Keanekaragaman Hayati Spesies Langka Tahun
+                2024
               </CardTitle>
               <CardDescription>PLTA Wonogiri</CardDescription>
             </CardHeader>
             <CardContent>
-              <img className="h-auto w-auto" src="/laporan.png" />
+              <img className="h-auto w-auto" src="/KHT-Langka.png" />
             </CardContent>
             <CardFooter>
               <Button
-                onClick={openModal5}
+                onClick={openModal3}
                 className="px-4 py-2 bg-blue-500 text-white rounded-lg"
               >
                 Open
               </Button>
               <Modal
-                isOpen={isModalOpen5}
-                onClose={closeModal5}
+                isOpen={isModalOpen3}
+                onClose={closeModal3}
                 size="custom-xl"
               >
                 <PdfViewer
-                  file="/KHT-5.c.2 Status dan Kecenderungan Sumber Daya Kehati.pdf"
-                  className="w-[850px] h-[700px] overflow-auto" // Tailwind classes for size
+                  file="/Laporan Kehati Langka Wonogiri 2024.pdf"
+                  className="w-[610px] h-[810px] overflow-auto" // Tailwind classes for size
                 />
               </Modal>
             </CardFooter>
@@ -182,7 +214,7 @@ const App: React.FC = () => {
                 size="custom-xl"
               >
                 <PdfViewer
-                  file="/Laporan Akhir Kehati Wonogiri 2024 signed.pdf"
+                  file="/Laporan Akhir Kehati Wonogiri 2024.pdf"
                   className="w-[612px] h-[700px] overflow-auto" // Tailwind classes for size
                 />
               </Modal>
@@ -201,14 +233,14 @@ const App: React.FC = () => {
             </CardContent>
             <CardFooter>
               <Button
-                onClick={openModal3}
+                onClick={openModal7}
                 className="px-4 py-2 bg-blue-500 text-white rounded-lg"
               >
                 Open
               </Button>
               <Modal
-                isOpen={isModalOpen3}
-                onClose={closeModal3}
+                isOpen={isModalOpen7}
+                onClose={closeModal7}
                 size="custom-xl"
               >
                 <PdfViewer
